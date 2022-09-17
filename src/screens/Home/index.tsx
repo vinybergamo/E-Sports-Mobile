@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Image, View, FlatList } from "react-native";
+// Others
 import logoImg from "../../assets/logo-nlw-esports.png";
-import { Heading } from "../../components/Heading";
+// Components
 import { GameCard, GameCardProps } from "../../GameCard";
+import { Heading } from "../../components/Heading";
+// Styles
 import { styles } from "./styles";
 
 export function Home() {
