@@ -9,8 +9,8 @@ import {
 
 import { Background } from "./src/components/Background";
 
-import { Loading } from "./src/components/Loading";
 import { Routes } from "./src/routes";
+import { Loading } from "./src/components/Loading";
 
 export default function App() {
   const [fontsLoader] = useFonts({

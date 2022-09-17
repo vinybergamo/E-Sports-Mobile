@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Image, FlatList } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { useNavigation, useNavigationBuilder } from "@react-navigation/native";
 // Others
 import logoImg from "../../assets/logo-nlw-esports.png";
 // Components
@@ -12,6 +13,12 @@ import { Background } from "../../components/Background";
 
 export function Home() {
   const [games, setGames] = useState<GameCardProps[]>([]);
+
+  const navigation = useNavigation();
+
+  const handleOpenGame = () => {
+    navigation.navigate("game");
+  };
 
   useEffect(() => {
     fetch("http://192.168.102.167:3333/games")
@@ -32,7 +39,9 @@ export function Home() {
         <FlatList
           data={games}
           keyExtractor={(item) => item.id}
-          renderItem={({ item }) => <GameCard data={item} />}
+          renderItem={({ item }) => (
+            <GameCard data={item} onPress={handleOpenGame} />
+          )}
           horizontal
           showsHorizontalScrollIndicator={false}
           showsVerticalScrollIndicator={false}
