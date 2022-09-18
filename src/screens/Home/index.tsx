@@ -5,7 +5,7 @@ import { useNavigation, useNavigationBuilder } from "@react-navigation/native";
 // Others
 import logoImg from "../../assets/logo-nlw-esports.png";
 // Components
-import { GameCard, GameCardProps } from "../../GameCard";
+import { GameCard, GameCardProps } from "../../components/GameCard";
 import { Heading } from "../../components/Heading";
 // Styles
 import { styles } from "./styles";
