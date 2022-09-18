@@ -16,8 +16,8 @@ export function Home() {
 
   const navigation = useNavigation();
 
-  const handleOpenGame = () => {
-    navigation.navigate("game");
+  const handleOpenGame = ({ id, title, bannerUrl }: GameCardProps) => {
+    navigation.navigate("game", { id, title, bannerUrl });
   };
 
   useEffect(() => {
@@ -40,7 +40,7 @@ export function Home() {
           data={games}
           keyExtractor={(item) => item.id}
           renderItem={({ item }) => (
-            <GameCard data={item} onPress={handleOpenGame} />
+            <GameCard data={item} onPress={() => handleOpenGame(item)} />
           )}
           horizontal
           showsHorizontalScrollIndicator={false}
